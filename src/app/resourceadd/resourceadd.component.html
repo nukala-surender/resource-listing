@@ -1,0 +1,28 @@
+<form>
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Resource Details</h5>
+      </div>
+      <div class="modal-body">
+
+        <input class="form-control" [(ngModel)]="resource1" name="e1" id="ex1" type="text" placeholder="Enter Title" required>
+        </div>
+      <div class="modal-body">
+
+        <input class="form-control" [(ngModel)]="groceryItem2" name="e2" id="ex2" type="text" placeholder="Enter URL/Path" required>
+        </div>
+      <div class="modal-body">
+
+        <input class="form-control" [(ngModel)]="groceryItem3" id="ex3" name="e3" type="text" placeholder="Enter Small Description" required>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="addGrocery()" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
