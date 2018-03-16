@@ -24,6 +24,7 @@ export class ResourceFilterPipe implements PipeTransform {
    */
   applyFilter(book: ResourceFilter, filter: ResourceFilter): boolean {
     for (let field in filter) {
+      console.log(field)
       if (filter[field]) {
         if (typeof filter[field] === 'string') {
           if (book[field].toLowerCase().indexOf(filter[field].toLowerCase()) === -1) {

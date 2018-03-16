@@ -1,9 +1,9 @@
 <div class="container">
   <table id="customers">
   <tr>
-    <th><input class="form-control" name="title" [(ngModel)]="filter.title" placeholder="Title" type="text" id="title"></th>
+    <th>Title</th>
     <th><input class="form-control" name="path" [(ngModel)]="filter.path" placeholder="Path of the Resource" type="text" id="path"> </th>
-    <th><input class="form-control" name="desc" [(ngModel)]="filter.desc" placeholder="Description" type="text" id="desc"></th>
+    <th>Description</th>
   </tr>
   <tr *ngFor="let item of groceryList | resourceFilter:filter ">
 

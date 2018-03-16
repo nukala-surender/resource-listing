@@ -5,7 +5,7 @@ export class ResourceFilter {
   /**
    * @type {number} id Unique numeric identifier.
    */
-  title: String;
+
 
   /**
    * @type {string} title The title of the book.
@@ -15,10 +15,9 @@ export class ResourceFilter {
   /**
    * @type {string} author The author of the book.
    */
-  desc: String;
+
 
   /**
    * @type {number} year The year the book was published.
    */
-  id: number;
 }
