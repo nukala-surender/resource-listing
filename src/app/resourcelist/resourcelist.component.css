@@ -1,8 +1,9 @@
 #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica;
     border-collapse: collapse;
     width: 100%;
-
+    font-style: light;
+    font-size: 22px
 }
 
 #customers td, #customers th {

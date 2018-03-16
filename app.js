@@ -19,10 +19,10 @@ app.get('/test', function (req, res) {
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-console.log('test log')
+
 app.post('/api/addResource', function(req, res){
-  console.log('inside add resource')
-  console.log(req.body)
+
+
   let resourceOjb = new reservice(req, res)
   resourceOjb.addGrocery()
 
