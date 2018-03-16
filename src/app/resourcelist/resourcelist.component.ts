@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Resource} from '../resourceadd/resource.model';
 import { CommonService } from '../app/services/common.service';
+import {ResourceFilter} from '../filter/resource';
 
 @Component({
   selector: 'app-resourcelist',
@@ -15,7 +16,8 @@ export class ResourcelistComponent implements OnInit {
 
 	constructor(private commonService:CommonService){
 
-	}
+  }
+  filter: ResourceFilter = new ResourceFilter();
 
 	ngOnInit(){
 

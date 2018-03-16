@@ -3,9 +3,9 @@
   <tr>
     <th><input class="form-control" name="title" [(ngModel)]="filter.title" placeholder="Title" type="text" id="title"></th>
     <th><input class="form-control" name="path" [(ngModel)]="filter.path" placeholder="Path of the Resource" type="text" id="path"> </th>
-    <th><input class="form-control" name="desc" [(ngModel)]="filter.desc" placeholder="Description" type="text" id="path"></th>
+    <th><input class="form-control" name="desc" [(ngModel)]="filter.desc" placeholder="Description" type="text" id="desc"></th>
   </tr>
-  <tr *ngFor="let item of groceryList | resourceFilter:filter">
+  <tr *ngFor="let item of groceryList | resourceFilter:filter ">
 
     <td>{{item.title}}</td>
     <td><a href="{{item.path}}" target="_blank">{{item.path}}</a></td>

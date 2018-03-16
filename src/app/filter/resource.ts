@@ -1,7 +1,7 @@
 /**
  * Book entity, used for filtering as well.
  */
-export class Resource {
+export class ResourceFilter {
   /**
    * @type {number} id Unique numeric identifier.
    */
