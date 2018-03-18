@@ -5,16 +5,20 @@ const url = 'mongodb://user:root@ds247698.mlab.com:47698/my-db';
 
 
 class ResourceService{
+
     constructor(req, res){
         this.req = req
         this.res = res
+
     }
       insert(groceryItem1,groceryItem2,groceryItem3, db, callback){
         const myAwesomeDB = db.db('my-db')
+        var id=1
         myAwesomeDB.collection('resource').insertOne({
                 "title" : groceryItem1,
                 "path" : groceryItem2,
-                "desc" : groceryItem3
+                "desc" : groceryItem3,
+                "id" : id++
         }, function(){
             callback()
         })
@@ -30,7 +34,7 @@ class ResourceService{
         try{
             MongoClient.connect(url, function(err, db) {
                 assert.equal(null, err);
-                console.log("connected")
+
                 self.insert(groceryItem1,groceryItem2,groceryItem3, db, function(){
 
                     return self.res.status(200).json({
@@ -56,8 +60,8 @@ class ResourceService{
             assert.equal(null, err);
             let groceryList = []
               const myAwesomeDB = db.db('my-db')
-
-            let cursor = myAwesomeDB.collection('resource').find();
+               var mysort = { id: -1 };
+            let cursor = myAwesomeDB.collection('resource').find().sort(mysort);
 
             cursor.each(function(err, doc) {
               assert.equal(err, null);
