@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, Component, Injectable } from '@angular/core';
 
 import { ResourceFilter } from './resource';
 
@@ -6,37 +6,14 @@ import { ResourceFilter } from './resource';
     name: 'resourceFilter',
     pure: false
 })
+@Injectable()
 export class ResourceFilterPipe implements PipeTransform {
-  transform(items: ResourceFilter[], filter: ResourceFilter): ResourceFilter[] {
-    if (!items || !filter) {
+
+  transform(items: any[], filter: string): any[] {
+
+   if (!items || !filter) {
       return items;
     }
-    // filter items array, items which match and return true will be kept, false will be filtered out
-    return items.filter((item: ResourceFilter) => this.applyFilter(item, filter));
-  }
-
-  /**
-   * Perform the filtering.
-   *
-   * @param {Resource} book The book to compare to the filter.
-   * @param {Resource} filter The filter to apply.
-   * @return {boolean} True if book satisfies filters, false if not.
-   */
-  applyFilter(book: ResourceFilter, filter: ResourceFilter): boolean {
-    for (let field in filter) {
-      console.log(field)
-      if (filter[field]) {
-        if (typeof filter[field] === 'string') {
-          if (book[field].toLowerCase().indexOf(filter[field].toLowerCase()) === -1) {
-            return false;
-          }
-        } else if (typeof filter[field] === 'number') {
-          if (book[field] !== filter[field]) {
-            return false;
-          }
-        }
-      }
-    }
-    return true;
+  return items.filter(item => item['path'].toLowerCase().indexOf(filter.toLowerCase()) !== -1);
   }
 }

@@ -17,16 +17,15 @@ export class ResourceaddComponent implements OnInit {
     }
 
   addGrocery(){
-            console.log('------ inside add -------')
+
             console.log(this.resource1)
             this.commonService.addGrocery(this.resource1,this.groceryItem2,this.groceryItem3).subscribe(res => {
             this.commonService.add_subject.next()
-            console.log('------ afer add -------')
 
             this.resource1='';
             this.groceryItem2='';
             this.groceryItem3='';
-            console.log(this.resource1)
+
         })
     }
 

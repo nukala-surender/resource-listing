@@ -13,11 +13,12 @@ export class ResourcelistComponent implements OnInit {
 
 
   private groceryList:Resource[]
+  private items:ResourceFilter[]
 
 	constructor(private commonService:CommonService){
-
+    this.items=[]
   }
-  filter: ResourceFilter = new ResourceFilter();
+
 
 	ngOnInit(){
 
