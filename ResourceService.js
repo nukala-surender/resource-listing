@@ -1,7 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const url = 'mongodb://user:root@ds247698.mlab.com:47698/my-db';
 
+const assert = require('assert');
+
+const username = "user";
+  const password = "root";
+  const db = "my-db";
+  const mongoUrl = "ds247698.mlab.com:47698/";
+
+const passwd = username+':'+password
+const url = 'mongodb://'+passwd+'@'+mongoUrl+db;
 
 
 class ResourceService{
@@ -12,6 +19,7 @@ class ResourceService{
       insert(groceryItem1,groceryItem2,groceryItem3, db, callback){
         const myAwesomeDB = db.db('my-db')
         var id=1
+
         myAwesomeDB.collection('resource').insertOne({
                 title : groceryItem1,
                 path : groceryItem2,
@@ -57,6 +65,7 @@ class ResourceService{
         MongoClient.connect(url, function(err, db) {
             assert.equal(null, err);
             let groceryList = []
+            console.log(url)
               const myAwesomeDB = db.db('my-db')
                var mysort = { id: -1 };
             let cursor = myAwesomeDB.collection('resource').find().sort(mysort);
